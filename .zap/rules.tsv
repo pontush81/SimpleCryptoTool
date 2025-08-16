@@ -1,0 +1,15 @@
+# ZAP Scanning Rules
+# Format: ID	THRESHOLD	[REGEX to match URLs]
+
+# Ignore false positives for development
+10021	OFF	# X-Content-Type-Options header missing
+10020	OFF	# X-Frame-Options header missing  
+10016	OFF	# Web Browser XSS Protection Not Enabled
+10035	OFF	# Strict-Transport-Security Header Missing
+
+# Keep important security checks enabled
+40018	ON	# SQL Injection
+40019	ON	# SQL Injection - MySQL
+40020	ON	# SQL Injection - Hypersonic SQL
+40021	ON	# SQL Injection - Oracle
+40022	ON	# SQL Injection - PostgreSQL

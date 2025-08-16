@@ -8,26 +8,52 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
+    "test:ui": "vitest --ui",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui",
+    "e2e:headed": "playwright test --headed",
+    "prepare": "husky"
   },
   "dependencies": {
+    "lucide-react": "^0.525.0",
     "next": "^15.4.2",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "lucide-react": "^0.525.0"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@types/node": "^20.19.11",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
-    "typescript": "^5.9.2",
-    "tailwindcss": "^3.4.17",
     "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
     "eslint": "^9.33.0",
-    "eslint-config-next": "^15.4.2"
+    "eslint-config-next": "^15.4.2",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.2"
   },
-  "keywords": ["crypto", "signals", "bitcoin", "cycle", "analysis"],
+  "keywords": [
+    "crypto",
+    "signals",
+    "bitcoin",
+    "cycle",
+    "analysis"
+  ],
   "author": "Pontus Hörberg",
-  "license": "ISC"
+  "license": "ISC",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
+  }
 }

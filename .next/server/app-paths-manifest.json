@@ -1,0 +1,5 @@
+{
+  "/api/crypto/route": "app/api/crypto/route.js",
+  "/api/technical-analysis/route": "app/api/technical-analysis/route.js",
+  "/page": "app/page.js"
+}
